@@ -1,16 +1,19 @@
 import { Direction } from "../shared/Direction";
+import { InvalidEntryAmountError } from "./InvalidEntryAmountError";
 
 
-interface IEntityProps{
+interface IEntityProps {
   id: string
   direction: Direction
   amount: number
 }
 
-export class Entry{
-   private readonly props: IEntityProps
+type EntryProps = IEntityProps
 
-  constructor(props: IEntityProps){
+export class Entry {
+  private readonly props: IEntityProps
+
+  constructor(props: IEntityProps) {
     this.props = props
   }
 
@@ -24,5 +27,13 @@ export class Entry{
 
   get amount(): number {
     return this.props.amount;
+  }
+
+  static create(props: EntryProps): Entry {
+    if (props.amount <= 0) {
+      throw new InvalidEntryAmountError();
+    }
+
+    return new Entry(props);
   }
 }

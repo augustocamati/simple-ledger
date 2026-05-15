@@ -17,6 +17,10 @@ export class Account{
     this.props = props
   }
 
+  createAccount(props: IAccountProps){
+   return new Account(props);
+  }
+
   get id(): string {
     return this.props.id;
   }

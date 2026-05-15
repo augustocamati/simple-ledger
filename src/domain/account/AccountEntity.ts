@@ -17,7 +17,7 @@ export class Account{
     this.props = props
   }
 
-  createAccount(props: IAccountProps){
+  public static create(props: IAccountProps){
    return new Account(props);
   }
 

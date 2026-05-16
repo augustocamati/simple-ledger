@@ -4,7 +4,7 @@ import { UnbalancedTransactionError } from "./UnbalancedTransactionError"
 
 interface ITransactionProps {
   id: string
-  name?: string
+  name: string
   entries: Entry[]
 }
 
@@ -28,6 +28,18 @@ export class Transaction {
 
 
     
+  }
+
+  get id(): string {
+    return this.props.id;
+  }
+
+  get name(): string {
+    return this.props.name;
+  }
+
+  get entries(): Entry[] {
+    return this.props.entries;
   }
 
   private validateBalance() {

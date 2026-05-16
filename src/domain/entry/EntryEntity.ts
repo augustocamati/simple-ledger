@@ -4,6 +4,7 @@ import { InvalidEntryAmountError } from "./InvalidEntryAmountError";
 
 interface IEntityProps {
   id: string
+  accountId: string
   direction: Direction
   amount: number
 }
@@ -27,6 +28,10 @@ export class Entry {
 
   get amount(): number {
     return this.props.amount;
+  }
+
+  get accountId(): string {
+    return this.props.accountId;
   }
 
   static create(props: EntryProps): Entry {

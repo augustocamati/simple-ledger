@@ -2,7 +2,7 @@ import { Account } from "../../../domain/account/AccountEntity";
 import { IAccountRepository } from "../../../domain/account/AccountRepository";
 import { InMemoryDatabase } from "./InMemoryDatabase";
 
-export class InMemoryAccountsRepository implements IAccountRepository {
+export class InMemoryAccountRepository implements IAccountRepository {
   constructor(private readonly database: InMemoryDatabase
   ){}
   async save(account: Account): Promise<void> {

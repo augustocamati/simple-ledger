@@ -8,6 +8,6 @@ export interface CreateTransactionEntryInput {
 }
 export interface CreateTransactionInput {
   id?: string
-  name: string
+  name?: string
   entries: CreateTransactionEntryInput[]
 }

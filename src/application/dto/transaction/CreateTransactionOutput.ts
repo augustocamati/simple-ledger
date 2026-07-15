@@ -7,7 +7,7 @@ export interface CreateTransactionEntryInput {
   amount: number
 }
 export interface CreateTransactionOutput {
-  id: string
+  id?: string
   name: string
   entries: CreateTransactionEntryInput[]
 }
